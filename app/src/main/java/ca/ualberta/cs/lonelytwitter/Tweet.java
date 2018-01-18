@@ -18,7 +18,7 @@ public class Tweet {
     Takes in a Date date and String message.
     Throws an exception class that handles messages that are too long.
      */
-    public Tweet(Date date, String message) throws TweetTooLongException {
+    public Tweet(Date date, String message) throws ToolongException {
         this.setMessage(message);
         this.date = date;
     }
@@ -29,7 +29,7 @@ public class Tweet {
     Throws an exception class that handles messages that are too long.
      */
 
-    public Tweet(String message) throws TweetTooLongException {
+    public Tweet(String message) throws ToolongException {
         this.setMessage(message);
         this.date = new Date(); // current time and date
     }
@@ -64,9 +64,9 @@ public class Tweet {
     Takes in a String message.
     Throws an exception class that handles messages that are too long.
      */
-    public void setMessage(String message) throws TweetTooLongException {
+    public void setMessage(String message) throws ToolongException {
         if (message.length() > 145) {
-            throw new TweetTooLongException();
+            throw new ToolongException();
         }
         this.message = message;
     }
