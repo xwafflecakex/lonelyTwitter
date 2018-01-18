@@ -9,7 +9,8 @@ public class ToolongException extends Throwable {
      * The exception class if the tweet is too long.
      */
     public class TweetTooLongException extends Exception {
-        public TweetTooLongException() { }
+        public TweetTooLongException() {
+        }
 
         public TweetTooLongException(String detailMessage) {
             super(detailMessage);
