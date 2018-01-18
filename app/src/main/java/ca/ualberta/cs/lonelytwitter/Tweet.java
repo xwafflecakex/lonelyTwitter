@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Created by xwafflecakex on 2018-01-17.
  */
 
-public class Tweet {
+public abstract class Tweet implements Tweetables {
     private Date date;
     private String message;
 
