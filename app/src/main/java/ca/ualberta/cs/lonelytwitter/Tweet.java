@@ -64,7 +64,7 @@ public abstract class Tweet implements Tweetables {
     Throws an exception class that handles messages that are too long.
      */
     public void setMessage(String message) throws ToolongException {
-        if (message.length() > 145) {
+        if (message.length() > 160) {
             throw new ToolongException();
         }
         this.message = message;
