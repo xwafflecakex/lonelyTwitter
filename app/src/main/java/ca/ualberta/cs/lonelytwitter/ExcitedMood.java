@@ -26,10 +26,11 @@ public class ExcitedMood extends CurrentMood{
 
     /**
      *
-     * @return the new tweet string but with a excited sting added "--Super Excited :D!"
+     * @return the new tweet string but with a excited sting added "--Super Excited ＼(｀0´)／!"
      */
     @Override
     public String getCurrentMood() {
-        return super.getCurrentMood() + " --Super Excited :D!";
+        Log.i("info Tweet", super.getCurrentMood() + " -- Super Excited ＼(｀0´)／");
+        return super.getCurrentMood() + " -- Super Excited ＼(｀0´)／!";
     }
 }
