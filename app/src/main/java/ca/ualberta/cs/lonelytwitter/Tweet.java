@@ -2,7 +2,6 @@ package ca.ualberta.cs.lonelytwitter;
 
 
 import java.util.Date;
-import java.util.ArrayList;
 
 /**
  * Created by xwafflecakex on 2018-01-17.
@@ -70,7 +69,7 @@ public abstract class Tweet implements Tweetables {
         }
         this.message = message;
     }
-
+    public abstract boolean isImportant();
     /*
     Overrides(replaces) the original string and returns it in a readable form
      */
