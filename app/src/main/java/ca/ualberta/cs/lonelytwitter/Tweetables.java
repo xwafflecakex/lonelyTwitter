@@ -7,5 +7,6 @@ import java.util.Date;
 
 public interface Tweetables {
     public String getMessage();
+    public void setMessage(String message) throws ToolongException;
     public Date getDate();
 }
