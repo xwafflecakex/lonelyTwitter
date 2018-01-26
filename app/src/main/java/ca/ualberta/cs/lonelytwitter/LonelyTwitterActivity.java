@@ -132,6 +132,7 @@ public class LonelyTwitterActivity extends Activity {
 	}
 	/**
 	  * Testing the destroy memory on closing of the app.
+	  */
 	protected void onDestroy(){
 		super.onDestroy();
 		Log.i("In Destroy method","The app is closing");
