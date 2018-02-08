@@ -37,6 +37,7 @@ public class LonelyTwitterActivity extends Activity {
 
 
 
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
