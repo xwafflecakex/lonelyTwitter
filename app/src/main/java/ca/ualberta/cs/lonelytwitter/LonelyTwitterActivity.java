@@ -71,7 +71,7 @@ public class LonelyTwitterActivity extends Activity {
 				//tweetList.clear();
 				//deleteFile(FILENAME);  // TODO deprecate this button
 				ElasticsearchTweetController.GetTweetsTask getTweetsTask = new ElasticsearchTweetController.GetTweetsTask();
-				getTweetsTask.execute("");//Getts all posible tweets from the server.
+				getTweetsTask.execute("_search");//Getts all posible tweets from the server.
 
 				try{
 					tweetList = getTweetsTask.get();
