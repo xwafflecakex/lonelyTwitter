@@ -4,8 +4,9 @@ import java.util.Date;
 
 /**
  * Created by romansky on 1/14/16.
+ * Editied by yevtukh on 16/02/18
  */
-public abstract class Tweet {
+public abstract class Tweet implements Tweetable, Comparable<Tweet> {
     protected String message;
     private Date date;
 
@@ -43,5 +44,9 @@ public abstract class Tweet {
     @Override
     public String toString(){
         return date.toString() + " | " + message;
+    }
+    @Override
+    public int compareTo(Tweet tweet1, Tweet tweet2){
+        return tweet1.getDate().compareTo(tweet2.getDate());
     }
 }
