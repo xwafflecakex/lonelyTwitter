@@ -63,13 +63,6 @@ public class LonelyTwitterActivity extends Activity {
 			}
 		});
 
-
-		oldTweetsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-				Intent intent = new Intent(activity, EditTweetActivity.class);
-				startActivity(intent);
-			}
-		});
 	}
 
 	@Override
@@ -120,5 +113,17 @@ public class LonelyTwitterActivity extends Activity {
 			// TODO Auto-generated catch block
 			throw new RuntimeException();
 		}
+	}
+	private void oldTweetsList_itemOnClick() {
+		ListView sender = (ListView) findViewById(R.id.oldTweetsList);
+		sender.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+				Intent intent = new Intent(activity, EditTweetActivity.class);
+				intent.putExtra("Test Message", tweetList.get(i).getMessage());
+				intent.putExtra("Date", tweetList.get(i).getDate());
+				startActivity(intent);
+
+			}
+		});
 	}
 }

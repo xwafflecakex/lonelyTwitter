@@ -26,6 +26,20 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 
 
     }
 
+    public void testAddingTweetToTheList() {
+        solo.assertCurrentActivity("Wrong Activity", LonelyTwitterActivity.class);
+        solo.enterText((EditText) solo.getView(R.id.body), "Test Tweet");
+        solo.clickOnButton("Save");
+
+        solo.enterText((EditText) solo.getView(R.id.body), "");
+
+        assertTrue(solo.searchText("Test Tweet"));
+
+
+        solo.clickOnButton("Clear");
+        assertFalse(solo.searchText("Test Tweet"));
+    }
+
     public void testTweet(){
         solo.assertCurrentActivity("Wrong Activity", LonelyTwitterActivity.class);
 
@@ -48,6 +62,8 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 
 
         solo.assertCurrentActivity("Wrong Activity", LonelyTwitterActivity.class);
 
+        solo.clickOnButton("Clear");
+
         solo.enterText((EditText) solo.getView(R.id.body), "Test Tweet!");
 
         solo.clickOnButton("Save");
@@ -56,7 +72,7 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 
 
         assertTrue(solo.waitForText("Test Tweet!"));
 
-        final ListView oldTweetList = activity.getOldTweetList();
+        final ListView oldTweetList = activity.getOldTweetList(); //(ListView) activity.findViewById(R.id.oldTweetsList);
 
         Tweet tweet = (Tweet) oldTweetList.getItemPosition(0);
 
